@@ -3,5 +3,5 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Printf("Hello, there. First run of golang.\n")
+	fmt.Printf("Hello, there. First test of golang.\n")
 }
