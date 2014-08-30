@@ -7,6 +7,11 @@ import (
 
 func main() {
 	fmt.Printf("Started...\n")
-	getPage.PrintMessage()
- 
+	msg := getPage.PrintMessage()
+	fmt.Printf(msg)
+	fmt.Printf("\n")
+	msg2 := getPage.PrintEcho("ECHO TEST")
+ 	fmt.Printf(msg2)
+	fmt.Printf("\n")
+	
 }
