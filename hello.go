@@ -13,5 +13,7 @@ func main() {
 	msg2 := getPage.PrintEcho("ECHO TEST")
  	fmt.Printf(msg2)
 	fmt.Printf("\n")
+	body := getPage.GetContent("http://www.example.com")
+	fmt.Printf(body)
 	
 }
