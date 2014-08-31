@@ -2,18 +2,26 @@ package main
 
 import (
 	"fmt"
+	"os"
 	"github.com/nborkert/getPage"
 )
 
 func main() {
 	fmt.Printf("Started...\n")
-	msg := getPage.PrintMessage()
+/*	msg := getPage.PrintMessage()
 	fmt.Printf(msg)
 	fmt.Printf("\n")
 	msg2 := getPage.PrintEcho("ECHO TEST")
  	fmt.Printf(msg2)
 	fmt.Printf("\n")
-	body := getPage.GetContent("http://www.example.com")
-	fmt.Printf(body)
+*/	
+	page := "http://www.example.com"	
+	body := getPage.GetContent(page)
+	file, err := os.Create("example.com")
+	if err != nil {
+		fmt.Printf("Couldn't open file")
+	}
+	defer file.Close()
+	file.WriteString(body)
 	
 }
