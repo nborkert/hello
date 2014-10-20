@@ -8,6 +8,7 @@ import (
 
 func main() {
 	fmt.Printf("Started...\n")
+	fmt.Printf(os.Args[1])
 /*	msg := getPage.PrintMessage()
 	fmt.Printf(msg)
 	fmt.Printf("\n")
@@ -15,9 +16,10 @@ func main() {
  	fmt.Printf(msg2)
 	fmt.Printf("\n")
 */	
-	page := "http://www.example.com"	
+	//page := "http://www.example.com"
+	page := os.Args[1]	
 	body := getPage.GetContent(page)
-	file, err := os.Create("example.com")
+	file, err := os.Create("first")
 	if err != nil {
 		fmt.Printf("Couldn't open file")
 	}
