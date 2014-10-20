@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"os"
+	"net/url"
 	"github.com/nborkert/getPage"
 )
 
@@ -17,9 +18,15 @@ func main() {
 	fmt.Printf("\n")
 */	
 	//page := "http://www.example.com"
-	page := os.Args[1]	
+	page := os.Args[1]
+	u, err := url.Parse(page)
+	if err != nil {
+		panic(err)
+	}
+
+		
 	body := getPage.GetContent(page)
-	file, err := os.Create("first")
+	file, err := os.Create(u.Host)
 	if err != nil {
 		fmt.Printf("Couldn't open file")
 	}
