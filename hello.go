@@ -11,6 +11,7 @@ func main() {
 	fmt.Printf("Started...\n")
 	fmt.Printf(os.Args[1])
 /*	msg := getPage.PrintMessage()
+	more comments here
 	fmt.Printf(msg)
 	fmt.Printf("\n")
 	msg2 := getPage.PrintEcho("ECHO TEST")
