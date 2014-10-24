@@ -16,7 +16,7 @@ func main() {
 	msg2 := getPage.PrintEcho("ECHO TEST")
  	fmt.Printf(msg2)
 	fmt.Printf("\n")
-*/	
+*/
 	//page := "http://www.example.com"
 	page := os.Args[1]
 	u, err := url.Parse(page)
@@ -24,7 +24,6 @@ func main() {
 		panic(err)
 	}
 
-		
 	body := getPage.GetContent(page)
 	file, err := os.Create(u.Host)
 	if err != nil {
@@ -32,5 +31,4 @@ func main() {
 	}
 	defer file.Close()
 	file.WriteString(body)
-	
 }
