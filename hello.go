@@ -40,7 +40,7 @@ func main() {
 //	lineupPage := "http://159.203.70.245:3000"
 
 //HAProxy below. Sometimes passes. Maybe because only one server on backend? Nope, because HAProxy thinks rapid serial requests are a DoS attack.
-	lineupPage := "http://104.236.233.0:3000"
+	lineupPage := "http://52.36.17.139:80"
 
 //HAProxy below.
 //	lineupPage := "https://104.236.233.0:3001"
@@ -49,7 +49,7 @@ func main() {
 	max, _ := strconv.Atoi(os.Args[1])
 	cresults := make(chan int)
 
-//	for outer := 0; outer != 3; outer++ {
+	for outer := 0; outer != 5; outer++ {
 
 		for count := 0; count != max; count++ {
 	//		go getPage.GetHTTPCode(masterRosterPage, count, cresults)
@@ -65,7 +65,7 @@ func main() {
 		}
 
 
-//	}
+	}
 
 	/*
 		body := getPage.GetHTTPCode(page)
