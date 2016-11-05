@@ -12,15 +12,15 @@ import (
 func main() {
 	max, _ := strconv.Atoi(os.Args[1])
 	delay, _ := strconv.Atoi(os.Args[2])
-	lineupPage := os.Args[3]
+	targetPage := os.Args[3]
 
 	//	c := make (chan int)
 	tr := &http.Transport{TLSClientConfig: &tls.Config{InsecureSkipVerify: true}}
 	client := &http.Client{Transport: tr}
 
 	for count := 0; count != max; count++ {
-		go getPage.GetHTTPCodeNoChannel(lineupPage, count, client)
-		//		go getPage.GetHTTPCode(lineupPage, count, c, client)
+		go getPage.GetHTTPCodeNoChannel(targetPage, count, client)
+		//		go getPage.GetHTTPCode(targetPage, count, c, client)
 	}
 
 	/*
